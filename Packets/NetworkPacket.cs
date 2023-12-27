@@ -1,4 +1,5 @@
-﻿using MessagePack;
+﻿using Cysharp.Threading.Tasks;
+using MessagePack;
 
 namespace MasterServers.Packets
 {
@@ -12,5 +13,12 @@ namespace MasterServers.Packets
         public byte[] data;
 
         public T ConvertToPacket<T>() => MessagePackSerializer.Deserialize<T>(data);
+
+        public async UniTask<T> ConvertToPacketAsync<T>()
+        {
+            using MemoryStream stream = new(data);
+
+            return await MessagePackSerializer.DeserializeAsync<T>(stream);
+        }
     }
 }

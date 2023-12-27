@@ -1,34 +1,41 @@
 ﻿using System.Net;
+using Cysharp.Threading.Tasks;
 
 namespace MasterServers
 {
     internal static class Program
     {
-        private static void Main(string[] args)
+        private static async Task<int> Main(string[] args)
         {
-            Console.WriteLine("Server is 1\nClient is other");
+            Console.WriteLine("| Server is 1 | Client is 2 |");
 
             string input = Console.ReadLine();
 
             if (input == "1")
             {
-                MasterServer masterServer = new();
-
-                Console.WriteLine("Server is started\nPress enter to stop");
-
-                masterServer.Start();
-                Console.ReadLine();
-                masterServer.Stop();
-                return;
+                HandleServer();
+                return 0;
             }
 
-            Console.WriteLine("Client is started\nPress enter to stop");
-
-            HandleClient();
+            await HandleClient();
+            return 0;
         }
 
-        private static async void HandleClient()
+        private static void HandleServer()
         {
+            MasterServer masterServer = new();
+
+            Console.WriteLine("Server is started\n\nPress Enter to stop the Server");
+
+            masterServer.Start();
+            Console.ReadLine();
+            masterServer.Stop();
+        }
+
+        private static async UniTask HandleClient()
+        {
+            Console.WriteLine("Client is started\nPress enter to stop");
+
             MasterClient masterClient = new("127.0.0.1");
 
             RoomData[] list = await masterClient.GetServerList();
@@ -36,27 +43,6 @@ namespace MasterServers
             PrintServers(list);
 
             Console.ReadLine();
-
-            return;
-
-            Random random = new Random();
-
-            RoomData roomData = new RoomData();
-
-            roomData.address = random.Next();
-            roomData.port = (short)random.Next(0, short.MaxValue);
-
-            await masterClient.AddServerToList(roomData);
-
-            list = await masterClient.GetServerList();
-
-            PrintServers(list);
-
-            Console.WriteLine("Added server to List\nPress enter to remove server\n");
-
-            Console.ReadLine();
-
-            await masterClient.RemoveServerFromList(roomData);
         }
 
         private static void PrintServers(RoomData[] list)
@@ -65,7 +51,7 @@ namespace MasterServers
 
             for (int i = 0; i < list.Length; i++)
             {
-                IPAddress ipAddress = new IPAddress(list[i].address);
+                IPAddress ipAddress = new(list[i].address);
 
                 Console.WriteLine($"{ipAddress}:{list[i].port}");
             }

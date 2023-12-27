@@ -3,6 +3,7 @@ using System.Net.Sockets;
 using MasterServers.Extensions;
 using MasterServers.Packets;
 using MessagePack;
+using Cysharp.Threading.Tasks;
 
 namespace MasterServers
 {
@@ -31,10 +32,10 @@ namespace MasterServers
             _rooms.Add(new RoomData { address = 40000, port = 1233 });
         }
 
-        public void  Start()
+        public void Start()
         {
             _isWorking = true;
-            ListenRequests();
+            ListenRequests().Forget();
         }
 
         public void Stop()
@@ -42,14 +43,14 @@ namespace MasterServers
             _isWorking = false;
         }
 
-        private async void ListenRequests()
+        private async UniTask ListenRequests()
         {
             while (_isWorking)
             {
                 try
                 {
-                    UdpReceiveResult result = await _listener.ReceiveAsync().ConfigureAwait(false);
-                    HandleRequest(result);
+                    UdpReceiveResult result = await _listener.ReceiveAsync();
+                    HandleRequest(result).Forget();
                 }
                 catch (Exception e)
                 {
@@ -58,18 +59,18 @@ namespace MasterServers
             }
         }
 
-        private void HandleRequest(UdpReceiveResult result)
+        private async UniTask HandleRequest(UdpReceiveResult result)
         {
             NetworkPacket networkPacket = MessagePackSerializer.Deserialize<NetworkPacket>(result.Buffer);
 
             if (!_messageHandler.TryGetResolver(networkPacket.message,
-                    out Action<NetworkPacket, IPEndPoint> resolver))
+                    out Func<NetworkPacket, IPEndPoint, UniTask> resolver))
                 return;
 
-            resolver(networkPacket, result.RemoteEndPoint);
+            await resolver(networkPacket, result.RemoteEndPoint);
         }
 
-        private async void GetServerListRequest(NetworkPacket networkPacket, IPEndPoint remoteEndPoint)
+        private async UniTask GetServerListRequest(NetworkPacket networkPacket, IPEndPoint remoteEndPoint)
         {
             ServerListResponsePacket responsePacket = new();
 
@@ -85,22 +86,23 @@ namespace MasterServers
             await _listener.SendAsync(responsePacket, remoteEndPoint);
         }
 
-        private async void AddServerRequest(NetworkPacket networkPacket, IPEndPoint remoteEndPoint)
+        private async UniTask AddServerRequest(NetworkPacket networkPacket, IPEndPoint remoteEndPoint)
         {
-            AddServerRequestPacket packet = networkPacket.ConvertToPacket<AddServerRequestPacket>();
+            AddServerRequestPacket packet = await networkPacket.ConvertToPacketAsync<AddServerRequestPacket>();
 
             _rooms.Add(new RoomData { address = packet.address, port = packet.port });
         }
 
-        private async void RemoveServerRequest(NetworkPacket networkPacket, IPEndPoint remoteEndPoint)
+        private async UniTask RemoveServerRequest(NetworkPacket networkPacket, IPEndPoint remoteEndPoint)
         {
-            RemoveServerRequestPacket packet = networkPacket.ConvertToPacket<RemoveServerRequestPacket>();
+            RemoveServerRequestPacket packet = await networkPacket.ConvertToPacketAsync<RemoveServerRequestPacket>();
 
             _rooms.Remove(new RoomData { address = packet.address, port = packet.port });
         }
 
-        private async void GetServerByIdRequest(NetworkPacket networkPacket, IPEndPoint remoteEndPoint)
+        private async UniTask GetServerByIdRequest(NetworkPacket networkPacket, IPEndPoint remoteEndPoint)
         {
+            await UniTask.Yield();
         }
     }
 }

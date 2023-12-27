@@ -1,5 +1,6 @@
 ﻿using System.Net;
 using System.Net.Sockets;
+using Cysharp.Threading.Tasks;
 using MasterServers.Extensions;
 using MasterServers.Packets;
 using MessagePack;
@@ -17,7 +18,7 @@ namespace MasterServers
             _masterEndPoint = new IPEndPoint(IPAddress.Parse(masterAddress), MasterServer.PORT);
         }
 
-        public async Task<RoomData[]> GetServerList()
+        public async UniTask<RoomData[]> GetServerList()
         {
             await _client.SendAsync(new ServerListRequestPacket(), _masterEndPoint);
 
@@ -25,7 +26,8 @@ namespace MasterServers
 
             NetworkPacket networkPacket = MessagePackSerializer.Deserialize<NetworkPacket>(result.Buffer);
 
-            ServerListResponsePacket responsePacket = networkPacket.ConvertToPacket<ServerListResponsePacket>();
+            ServerListResponsePacket responsePacket =
+                await networkPacket.ConvertToPacketAsync<ServerListResponsePacket>();
 
             if (responsePacket.addresses.Length == 0) return Array.Empty<RoomData>();
 
@@ -44,24 +46,24 @@ namespace MasterServers
             return rooms.ToArray();
         }
 
-        public async Task AddServerToList(RoomData roomData)
+        public async UniTask AddServerToList(RoomData roomData)
         {
             AddServerRequestPacket packet = new();
 
             packet.address = roomData.address;
             packet.port = roomData.port;
 
-            await _client.SendAsync(packet, _masterEndPoint).ConfigureAwait(false);
+            await _client.SendAsync(packet, _masterEndPoint);
         }
 
-        public async Task RemoveServerFromList(RoomData roomData)
+        public async UniTask RemoveServerFromList(RoomData roomData)
         {
             RemoveServerRequestPacket packet = new();
 
             packet.address = roomData.address;
             packet.port = roomData.port;
 
-            await _client.SendAsync(packet, _masterEndPoint).ConfigureAwait(false);
+            await _client.SendAsync(packet, _masterEndPoint);
         }
     }
 }
