@@ -22,30 +22,37 @@ namespace HostingMasterLibrary.Client
 
         public async UniTask<RoomData[]> GetServerList()
         {
-            await _client.SendAsync(new ServerListRequestPacket(), _masterEndPoint);
-
-            UdpReceiveResult result = await _client.ReceiveAsync();
-
-            NetworkPacket networkPacket = MessagePackSerializer.Deserialize<NetworkPacket>(result.Buffer);
-
-            ServerListResponsePacket responsePacket =
-                await networkPacket.ConvertToPacketAsync<ServerListResponsePacket>();
-
-            if (responsePacket.addresses.Length == 0) return Array.Empty<RoomData>();
-
-            RoomData[] rooms = new RoomData[responsePacket.addresses.Length];
-
-            for (int roomIndex = 0; roomIndex < rooms.Length; roomIndex++)
+            try
             {
-                RoomData roomData = new();
+                await _client.SendAsync(new ServerListRequestPacket(), _masterEndPoint);
 
-                roomData.address = responsePacket.addresses[roomIndex];
-                roomData.port = responsePacket.ports[roomIndex];
+                UdpReceiveResult result = await _client.ReceiveAsync();
 
-                rooms[roomIndex] = roomData;
+                NetworkPacket networkPacket = MessagePackSerializer.Deserialize<NetworkPacket>(result.Buffer);
+
+                ServerListResponsePacket responsePacket =
+                    await networkPacket.ConvertToPacketAsync<ServerListResponsePacket>();
+
+                if (responsePacket.addresses.Length == 0) return Array.Empty<RoomData>();
+
+                RoomData[] rooms = new RoomData[responsePacket.addresses.Length];
+
+                for (int roomIndex = 0; roomIndex < rooms.Length; roomIndex++)
+                {
+                    RoomData roomData = new();
+
+                    roomData.address = responsePacket.addresses[roomIndex];
+                    roomData.port = responsePacket.ports[roomIndex];
+
+                    rooms[roomIndex] = roomData;
+                }
+
+                return rooms.ToArray();
             }
-
-            return rooms.ToArray();
+            catch (Exception)
+            {
+                return [];
+            }
         }
 
         public async UniTask AddServerToList(RoomData roomData)
