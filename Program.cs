@@ -12,7 +12,7 @@ namespace MasterServers
 
             if (input == "1")
             {
-                MasterServer masterServer = new MasterServer();
+                MasterServer masterServer = new();
 
                 Console.WriteLine("Server is started\nPress enter to stop");
 
@@ -31,6 +31,14 @@ namespace MasterServers
         {
             MasterClient masterClient = new("127.0.0.1");
 
+            RoomData[] list = await masterClient.GetServerList();
+
+            PrintServers(list);
+
+            Console.ReadLine();
+
+            return;
+
             Random random = new Random();
 
             RoomData roomData = new RoomData();
@@ -39,14 +47,6 @@ namespace MasterServers
             roomData.port = (short)random.Next(0, short.MaxValue);
 
             await masterClient.AddServerToList(roomData);
-            
-            RoomData[] list = await masterClient.GetServerList().ConfigureAwait(false);
-
-            PrintServers(list);
-
-            Console.ReadLine();
-
-            return;
 
             list = await masterClient.GetServerList();
 

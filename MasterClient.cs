@@ -19,9 +19,9 @@ namespace MasterServers
 
         public async Task<RoomData[]> GetServerList()
         {
-            await _client.SendAsync(new ServerListRequestPacket(), _masterEndPoint).ConfigureAwait(false);
+            await _client.SendAsync(new ServerListRequestPacket(), _masterEndPoint);
 
-            UdpReceiveResult result = await _client.ReceiveAsync().ConfigureAwait(false);
+            UdpReceiveResult result = await _client.ReceiveAsync();
 
             NetworkPacket networkPacket = MessagePackSerializer.Deserialize<NetworkPacket>(result.Buffer);
 

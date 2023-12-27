@@ -82,7 +82,7 @@ namespace MasterServers
                 responsePacket.ports[roomIndex] = _rooms[roomIndex].port;
             }
 
-            await _listener.SendAsync(responsePacket, remoteEndPoint).ConfigureAwait(false);
+            await _listener.SendAsync(responsePacket, remoteEndPoint);
         }
 
         private async void AddServerRequest(NetworkPacket networkPacket, IPEndPoint remoteEndPoint)
