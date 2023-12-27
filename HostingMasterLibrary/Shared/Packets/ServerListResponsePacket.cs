@@ -1,7 +1,7 @@
-﻿using MasterServers.Interfaces;
+﻿using HostingMasterLibrary.Shared.Interfaces;
 using MessagePack;
 
-namespace MasterServers.Packets
+namespace HostingMasterLibrary.Shared.Packets
 {
     [MessagePackObject]
     public class ServerListResponsePacket : IConvertableToNetwork

@@ -1,11 +1,13 @@
 ﻿using System.Net;
 using System.Net.Sockets;
 using Cysharp.Threading.Tasks;
-using MasterServers.Extensions;
-using MasterServers.Packets;
+using HostingMasterLibrary.Server;
+using HostingMasterLibrary.Shared;
+using HostingMasterLibrary.Shared.Extensions;
+using HostingMasterLibrary.Shared.Packets;
 using MessagePack;
 
-namespace MasterServers
+namespace HostingMasterLibrary.Client
 {
     public class MasterClient
     {

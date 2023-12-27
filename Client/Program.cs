@@ -1,28 +1,31 @@
 ﻿using System.Net;
-using Cysharp.Threading.Tasks;
-using MasterServers;
+using HostingMasterLibrary.Client;
+using HostingMasterLibrary.Shared;
 
 namespace Client
 {
     public static class Program
     {
-        private static async Task<int> Main(string[] args)
+        private static async Task<int> Main(string[] _)
         {
-            await HandleClient();
-            return 0;
-        }
-
-        private static async UniTask HandleClient()
-        {
-            Console.WriteLine("Client is started\nPress enter to stop");
+            Console.WriteLine("Client is started");
 
             MasterClient masterClient = new("127.0.0.1");
+
+            RoomData roomData = new();
+
+            roomData.address = Random.Shared.Next();
+            roomData.port = (short)Random.Shared.Next(0, short.MaxValue);
+
+            await masterClient.AddServerToList(roomData);
 
             RoomData[] list = await masterClient.GetServerList();
 
             PrintServers(list);
 
+            Console.WriteLine("Press enter to stop");
             Console.ReadLine();
+            return 0;
         }
 
         private static void PrintServers(RoomData[] list)
@@ -35,6 +38,8 @@ namespace Client
 
                 Console.WriteLine($"{ipAddress}:{list[i].port}");
             }
+
+            Console.WriteLine();
         }
     }
 }

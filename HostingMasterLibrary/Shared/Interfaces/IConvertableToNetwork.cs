@@ -1,6 +1,6 @@
-﻿using MasterServers.Packets;
+﻿using HostingMasterLibrary.Shared.Packets;
 
-namespace MasterServers.Interfaces
+namespace HostingMasterLibrary.Shared.Interfaces
 {
     public interface IConvertableToNetwork
     {

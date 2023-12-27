@@ -1,8 +1,8 @@
 ﻿using System.Net;
 using Cysharp.Threading.Tasks;
-using MasterServers.Packets;
+using HostingMasterLibrary.Shared.Packets;
 
-namespace MasterServers
+namespace HostingMasterLibrary.Shared
 {
     public class MessageHandler<T> where T : struct
     {

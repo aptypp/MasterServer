@@ -1,19 +1,15 @@
-﻿using MasterServers;
+﻿using HostingMasterLibrary.Server;
 
 namespace Server
 {
     public static class Program
     {
-        private static void Main(string[] args)
-        {
-            HandleServer();
-        }
-
-        private static void HandleServer()
+        private static void Main(string[] _)
         {
             MasterServer masterServer = new();
 
-            Console.WriteLine("Server is started\n\nPress Enter to stop the Server");
+            Console.WriteLine("Server is started");
+            Console.WriteLine("Press Enter to stop the Server");
 
             masterServer.Start();
             Console.ReadLine();

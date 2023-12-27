@@ -1,7 +1,7 @@
 ﻿using Cysharp.Threading.Tasks;
 using MessagePack;
 
-namespace MasterServers.Packets
+namespace HostingMasterLibrary.Shared.Packets
 {
     [MessagePackObject]
     public class NetworkPacket

@@ -8,32 +8,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c43677f6-41f0-4ec9-8cc3-f84a46f6c353" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.HostingMaster/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.HostingMaster/.idea/indexLayout.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.HostingMaster/.idea/projectSettingsUpdater.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.HostingMaster/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.HostingMaster/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Client/Client.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Client/Program.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HostingMaster.sln" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HostingMasterLibrary/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HostingMasterLibrary/Client/MasterClient.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HostingMasterLibrary/HostingMasterLibrary.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HostingMasterLibrary/Server/MasterServer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HostingMasterLibrary/Shared/Extensions/UdpClientExtension.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HostingMasterLibrary/Shared/Interfaces/IConvertableToNetwork.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HostingMasterLibrary/Shared/Message.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HostingMasterLibrary/Shared/MessageHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HostingMasterLibrary/Shared/Packets/AddServerRequestPacket.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HostingMasterLibrary/Shared/Packets/NetworkPacket.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HostingMasterLibrary/Shared/Packets/RemoveServerRequestPacket.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HostingMasterLibrary/Shared/Packets/ServerListRequestPacket.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HostingMasterLibrary/Shared/Packets/ServerListResponsePacket.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HostingMasterLibrary/Shared/RoomData.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/Program.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/Server.csproj" afterDir="false" />
+    <list default="true" id="c43677f6-41f0-4ec9-8cc3-f84a46f6c353" name="Changes" comment="Init repo">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.HostingMaster/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HostingMaster/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Client/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HostingMasterLibrary/Client/MasterClient.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HostingMasterLibrary/Client/MasterClient.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HostingMasterLibrary/Server/MasterServer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HostingMasterLibrary/Server/MasterServer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HostingMasterLibrary/Shared/Extensions/UdpClientExtension.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HostingMasterLibrary/Shared/Extensions/UdpClientExtension.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HostingMasterLibrary/Shared/Interfaces/IConvertableToNetwork.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HostingMasterLibrary/Shared/Interfaces/IConvertableToNetwork.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HostingMasterLibrary/Shared/Message.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HostingMasterLibrary/Shared/Message.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HostingMasterLibrary/Shared/MessageHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HostingMasterLibrary/Shared/MessageHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HostingMasterLibrary/Shared/Packets/AddServerRequestPacket.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HostingMasterLibrary/Shared/Packets/AddServerRequestPacket.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HostingMasterLibrary/Shared/Packets/NetworkPacket.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HostingMasterLibrary/Shared/Packets/NetworkPacket.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HostingMasterLibrary/Shared/Packets/RemoveServerRequestPacket.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HostingMasterLibrary/Shared/Packets/RemoveServerRequestPacket.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HostingMasterLibrary/Shared/Packets/ServerListRequestPacket.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HostingMasterLibrary/Shared/Packets/ServerListRequestPacket.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HostingMasterLibrary/Shared/Packets/ServerListResponsePacket.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HostingMasterLibrary/Shared/Packets/ServerListResponsePacket.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HostingMasterLibrary/Shared/RoomData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HostingMasterLibrary/Shared/RoomData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Server/Program.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,10 +33,16 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/5535e31a712343a63f5d7d796cd874e563e5ac14/src/libraries/System.Net.Sockets/src/System/Net/Sockets/Socket.Tasks.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/5535e31a712343a63f5d7d796cd874e563e5ac14/src/libraries/System.Net.Sockets/src/System/Net/Sockets/UDPClient.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/5535e31a712343a63f5d7d796cd874e563e5ac14/src/libraries/System.Private.CoreLib/src/System/Threading/Tasks/ValueTask.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/71b4ecbaa8944829ad09e6bd462ffc2a84908/63/ad600947/SocketFlags.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 5
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="2a8iRUV6fSA3eBZ5yQF7E4tFQXO" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -55,6 +51,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    ".NET Project.Client.executor": "Debug",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
@@ -120,8 +117,17 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1703706598466</updated>
-      <workItem from="1703706599516" duration="1771000" />
+      <workItem from="1703706599516" duration="4543000" />
     </task>
+    <task id="LOCAL-00001" summary="Init repo">
+      <option name="closed" value="true" />
+      <created>1703708425040</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1703708425040</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -141,5 +147,26 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="Init repo" />
+    <option name="LAST_COMMIT_MESSAGE" value="Init repo" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Client/Program.cs</url>
+          <line>21</line>
+          <properties documentPath="C:\Users\Artur\Documents\Dotnet\HostingMaster\Client\Program.cs" initialLine="20" containingFunctionPresentation="Method 'Main'">
+            <startOffsets>
+              <option value="563" />
+            </startOffsets>
+            <endOffsets>
+              <option value="616" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

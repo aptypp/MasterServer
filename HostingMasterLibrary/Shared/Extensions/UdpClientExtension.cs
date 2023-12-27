@@ -1,9 +1,9 @@
 ﻿using System.Net;
 using System.Net.Sockets;
-using MasterServers.Interfaces;
+using HostingMasterLibrary.Shared.Interfaces;
 using MessagePack;
 
-namespace MasterServers.Extensions
+namespace HostingMasterLibrary.Shared.Extensions
 {
     public static class UdpClientExtension
     {

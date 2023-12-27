@@ -1,4 +1,4 @@
-﻿namespace MasterServers
+﻿namespace HostingMasterLibrary.Shared
 {
     public enum Message : short
     {
