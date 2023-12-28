@@ -59,7 +59,6 @@ namespace HostingMasterLibrary.Client
         {
             AddServerRequestPacket packet = new();
 
-            packet.address = roomData.address;
             packet.port = roomData.port;
 
             await _client.SendAsync(packet, _masterEndPoint);
@@ -69,7 +68,6 @@ namespace HostingMasterLibrary.Client
         {
             RemoveServerRequestPacket packet = new();
 
-            packet.address = roomData.address;
             packet.port = roomData.port;
 
             await _client.SendAsync(packet, _masterEndPoint);

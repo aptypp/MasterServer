@@ -3,7 +3,7 @@
     public struct RoomData : IEquatable<RoomData>
     {
         public long address;
-        public short port;
+        public ushort port;
 
         public bool Equals(RoomData other)
         {

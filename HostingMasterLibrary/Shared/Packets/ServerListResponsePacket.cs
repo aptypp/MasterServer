@@ -10,7 +10,7 @@ namespace HostingMasterLibrary.Shared.Packets
         public long[] addresses;
 
         [Key(1)]
-        public short[] ports;
+        public ushort[] ports;
 
         public NetworkPacket ConvertToNetworkPacket()
         {

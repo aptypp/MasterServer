@@ -15,7 +15,7 @@ namespace Client
             RoomData roomData = new();
 
             roomData.address = Random.Shared.Next();
-            roomData.port = (short)Random.Shared.Next(0, short.MaxValue);
+            roomData.port = (ushort)Random.Shared.Next(0, short.MaxValue);
 
             await masterClient.AddServerToList(roomData);
 

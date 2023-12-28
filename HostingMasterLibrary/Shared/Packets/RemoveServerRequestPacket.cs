@@ -7,10 +7,7 @@ namespace HostingMasterLibrary.Shared.Packets
     public class RemoveServerRequestPacket : IConvertableToNetwork
     {
         [Key(0)]
-        public long address;
-
-        [Key(1)]
-        public short port;
+        public ushort port;
 
         public NetworkPacket ConvertToNetworkPacket()
         {

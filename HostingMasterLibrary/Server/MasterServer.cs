@@ -72,7 +72,7 @@ namespace HostingMasterLibrary.Server
             ServerListResponsePacket responsePacket = new();
 
             responsePacket.addresses = new long[_rooms.Count];
-            responsePacket.ports = new short[_rooms.Count];
+            responsePacket.ports = new ushort[_rooms.Count];
 
             for (int roomIndex = 0; roomIndex < _rooms.Count; roomIndex++)
             {
@@ -87,14 +87,14 @@ namespace HostingMasterLibrary.Server
         {
             AddServerRequestPacket packet = await networkPacket.ConvertToPacketAsync<AddServerRequestPacket>();
 
-            _rooms.Add(new RoomData { address = packet.address, port = packet.port });
+            _rooms.Add(new RoomData { address = remoteEndPoint.Address.Address, port = packet.port });
         }
 
         private async UniTask RemoveServerRequest(NetworkPacket networkPacket, IPEndPoint remoteEndPoint)
         {
             RemoveServerRequestPacket packet = await networkPacket.ConvertToPacketAsync<RemoveServerRequestPacket>();
 
-            _rooms.Remove(new RoomData { address = packet.address, port = packet.port });
+            _rooms.Remove(new RoomData { address = remoteEndPoint.Address.Address, port = packet.port });
         }
 
         private async UniTask GetServerByIdRequest(NetworkPacket networkPacket, IPEndPoint remoteEndPoint)
