@@ -16,7 +16,7 @@ namespace HostingMasterLibrary.Shared.Packets
         {
             NetworkPacket networkPacket = new NetworkPacket();
 
-            networkPacket.message = Message.GetServerListResponse;
+            networkPacket.message = (ushort)Message.GetServerListResponse;
             networkPacket.data = MessagePackSerializer.Serialize(this);
 
             return networkPacket;

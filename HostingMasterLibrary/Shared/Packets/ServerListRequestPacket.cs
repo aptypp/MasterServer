@@ -10,7 +10,7 @@ namespace HostingMasterLibrary.Shared.Packets
         {
             NetworkPacket networkPacket = new();
 
-            networkPacket.message = Message.GetServerListRequest;
+            networkPacket.message = (ushort)Message.GetServerListRequest;
 
             return networkPacket;
         }

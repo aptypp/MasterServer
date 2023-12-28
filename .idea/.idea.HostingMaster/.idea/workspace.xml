@@ -8,15 +8,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c43677f6-41f0-4ec9-8cc3-f84a46f6c353" name="Changes" comment="fixed cli for server example">
+    <list default="true" id="c43677f6-41f0-4ec9-8cc3-f84a46f6c353" name="Changes" comment="Changed port type">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HostingMaster/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HostingMaster/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Client/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HostingMasterLibrary/Client/MasterClient.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HostingMasterLibrary/Client/MasterClient.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HostingMasterLibrary/Server/MasterServer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HostingMasterLibrary/Server/MasterServer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HostingMasterLibrary/Shared/Packets/AddServerRequestPacket.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HostingMasterLibrary/Shared/Packets/AddServerRequestPacket.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HostingMasterLibrary/Shared/Packets/NetworkPacket.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HostingMasterLibrary/Shared/Packets/NetworkPacket.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HostingMasterLibrary/Shared/Packets/RemoveServerRequestPacket.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HostingMasterLibrary/Shared/Packets/RemoveServerRequestPacket.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HostingMasterLibrary/Shared/Packets/ServerListRequestPacket.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HostingMasterLibrary/Shared/Packets/ServerListRequestPacket.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HostingMasterLibrary/Shared/Packets/ServerListResponsePacket.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HostingMasterLibrary/Shared/Packets/ServerListResponsePacket.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HostingMasterLibrary/Shared/RoomData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HostingMasterLibrary/Shared/RoomData.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +30,13 @@
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/5535e31a712343a63f5d7d796cd874e563e5ac14/src/libraries/System.Net.Sockets/src/System/Net/Sockets/UDPClient.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/5535e31a712343a63f5d7d796cd874e563e5ac14/src/libraries/System.Private.CoreLib/src/System/Threading/Tasks/ValueTask.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/71b4ecbaa8944829ad09e6bd462ffc2a84908/63/ad600947/SocketFlags.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Artur/Documents/Dotnet/HostingMaster/Client/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Artur/Documents/Dotnet/HostingMaster/HostingMasterLibrary/Client/MasterClient.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Artur/Documents/Dotnet/HostingMaster/HostingMasterLibrary/Server/MasterServer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Artur/Documents/Dotnet/HostingMaster/HostingMasterLibrary/Shared/Packets/AddServerRequestPacket.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Artur/Documents/Dotnet/HostingMaster/HostingMasterLibrary/Shared/Packets/RemoveServerRequestPacket.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Artur/Documents/Dotnet/HostingMaster/HostingMasterLibrary/Shared/Packets/ServerListResponsePacket.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Artur/Documents/Dotnet/HostingMaster/HostingMasterLibrary/Shared/RoomData.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/Artur/Documents/Dotnet/HostingMaster/Server/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/Artur/Documents/Dotnet/HostingMaster/Server/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/Artur/Documents/Dotnet/HostingMaster/Server/Program.cs" root0="SKIP_HIGHLIGHTING" />
@@ -120,7 +126,7 @@
       <updated>1703706598466</updated>
       <workItem from="1703706599516" duration="8072000" />
       <workItem from="1703719271825" duration="12000" />
-      <workItem from="1703722033229" duration="3776000" />
+      <workItem from="1703722033229" duration="4039000" />
     </task>
     <task id="LOCAL-00001" summary="Init repo">
       <option name="closed" value="true" />
@@ -154,7 +160,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703722123244</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Changed port type">
+      <option name="closed" value="true" />
+      <created>1703800291148</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1703800291148</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -178,6 +192,7 @@
     <MESSAGE value="Organized code" />
     <MESSAGE value="Fixed client crashing when server is offline" />
     <MESSAGE value="fixed cli for server example" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed cli for server example" />
+    <MESSAGE value="Changed port type" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed port type" />
   </component>
 </project>

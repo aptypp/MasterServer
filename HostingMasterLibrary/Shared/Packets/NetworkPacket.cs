@@ -7,7 +7,7 @@ namespace HostingMasterLibrary.Shared.Packets
     public class NetworkPacket
     {
         [Key(0)]
-        public Message message;
+        public ushort message;
 
         [Key(1)]
         public byte[] data;

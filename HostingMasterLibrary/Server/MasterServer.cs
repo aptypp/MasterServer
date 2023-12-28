@@ -60,7 +60,7 @@ namespace HostingMasterLibrary.Server
         {
             NetworkPacket networkPacket = MessagePackSerializer.Deserialize<NetworkPacket>(result.Buffer);
 
-            if (!_messageHandler.TryGetResolver(networkPacket.message,
+            if (!_messageHandler.TryGetResolver((Message)networkPacket.message,
                     out Func<NetworkPacket, IPEndPoint, UniTask> resolver))
                 return;
 

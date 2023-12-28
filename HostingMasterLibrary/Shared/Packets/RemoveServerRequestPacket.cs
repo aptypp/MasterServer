@@ -13,7 +13,7 @@ namespace HostingMasterLibrary.Shared.Packets
         {
             NetworkPacket networkPacket = new();
 
-            networkPacket.message = Message.RemoveServerRequest;
+            networkPacket.message = (ushort)Message.RemoveServerRequest;
             networkPacket.data = MessagePackSerializer.Serialize(this);
 
             return networkPacket;
