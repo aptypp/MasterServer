@@ -9,10 +9,20 @@ namespace Server
             MasterServer masterServer = new();
 
             Console.WriteLine("Server is started");
-            Console.WriteLine("Press Enter to stop the Server");
+            Console.WriteLine("Write 'stop' to stop and exit");
 
             masterServer.Start();
-            Console.ReadLine();
+
+            while (true)
+            {
+                string? input = Console.ReadLine();
+
+                if (input is not "stop") continue;
+
+                Console.WriteLine("Server is stopped");
+                break;
+            }
+
             masterServer.Stop();
         }
     }
